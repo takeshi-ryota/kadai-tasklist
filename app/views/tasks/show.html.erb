@@ -3,7 +3,8 @@
 </h1>
 
 <p>
-  <%= @task.content %>
+  ステータス：<%= @task.status %>
+  メッセージ：<%= @task.content %>
 </p>
 
 <%= link_to '一覧に戻る',tasks_path %>
