@@ -1,5 +1,23 @@
 <%= form_for(task) do |f| %>
 
+<% if task.errors.any? %>
+
+    <div id="error_explanation">
+      <ul>
+        
+<% task.errors.full_messages.each do |message| %>
+
+          <li>
+<%= message %>
+</li>
+        
+<% end %>
+
+      </ul>
+    </div>
+  
+<% end %>
+
 <%= f.label :content,'ステータス' %>
 
 <%= f.text_field :status %>
