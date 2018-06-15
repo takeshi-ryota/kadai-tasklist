@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   
   before_action :require_user_logged_in, only: [:show]
+  
   def index
+    @user = current_user
     @users = User.all.page(params[:page])
-    @tasks = Task.all
   end
 
   def show

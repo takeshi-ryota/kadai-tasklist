@@ -1,0 +1,29 @@
+<% if @tasks.any? %>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @tasks.each do |task| %>
+      <tr>
+        <td> <%= link_to task.user.name, user_path(task.user) %></td>
+        <td> <%= task.status %> </td>
+        <td> <%= task.content %> </td>
+      </tr>
+      <% end %>
+      
+    </tbody>
+  </table>
+  
+  <div>
+  
+  </div>
+
+<% end %>
+
+<%= link_to '新規タスクの投稿',new_task_path, class: "btn btn-primary" %>
